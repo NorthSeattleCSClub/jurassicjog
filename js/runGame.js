@@ -1,10 +1,10 @@
 var runGame = {
-    preload: function() {
+    preload: function () {
         game.load.image('sky', 'assets/sky.png');
         game.load.image('ground', 'assets/platform.png');
         game.load.spritesheet('sprite', 'assets/sprite.png', 32, 48);
     },
-    create: function() {
+    create: function () {
         console.log("Game is running!");
 
         //adding physics
@@ -14,10 +14,10 @@ var runGame = {
         game.add.sprite(0, 0, 'sky');
 
     },
-    update: function() {
+    update: function () {
 
     },
-    gameOver: function() {
+    gameOver: function () {
         game.state.start("gameOver");
     }
 }
