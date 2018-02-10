@@ -6,11 +6,18 @@ var runGame = {
     },
     create: function() {
         console.log("Game is running!");
+
+        //adding physics
+        game.physics.startSystem(Phaser.Physics.ARCADE);
+
+        //background
+        game.add.sprite(0, 0, 'sky');
+
     },
     update: function() {
 
     },
     gameOver: function() {
-        game.state.start("menu");
+        game.state.start("gameOver");
     }
 }
