@@ -14,6 +14,9 @@ var runGame = {
         //background
         game.add.sprite(0, 0, 'sky');
 
+        //add ground
+        var ground = game.add.sprite(0, game.height * .9, 'ground');
+
         //add the hero in
         this.hero=game.add.sprite(game.width*.2, ground.y-25, 'hero');
 
