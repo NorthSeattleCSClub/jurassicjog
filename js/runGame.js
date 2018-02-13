@@ -18,18 +18,35 @@ var runGame = {
         var ground = game.add.sprite(0, game.height * .9, 'ground');
 
         //add the hero in
-        this.hero=game.add.sprite(game.width*.2, ground.y-25, 'hero');
+        this.hero = game.add.sprite(game.width*.2, ground.y-25, 'hero');
 
         //enable physics for hero 
         game.physics.enable(this.hero, Phaser.Physics.ARCADE);
 
     
     },
+    makeArray: function(){
+        var myArray = [];
+        for(var i = start; i &lt; end; i++) {
+            myArray.push(i);
+        }
+        return myArray;
+    },
+
     update: function () {
 
     },
+
+    mouseDown: function(){
+        this.timer = game.time.events.loop(Phaser.Time.SECOND/1000, this.increasePower, this);
+    },
+    mouseUp: function(){
+        this.doJump();
+        game.time.events.remove(this.timer);
+        
+    }
     doJump: function(){
-        this.hero.body.velocity.y = -this.power&*12;
+        this.hero.body.velocity.y = -this.power*12;
     },
     gameOver: function () {
         game.state.start("gameOver");
