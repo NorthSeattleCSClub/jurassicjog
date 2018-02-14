@@ -5,6 +5,7 @@ var runGame = {
         game.load.spritesheet('sprite', 'assets/sprite.png', 32, 48);
     },
     create: function () {
+        //erase this later
         console.log("Game is running!");
 
         //adding physics
