@@ -27,7 +27,7 @@ var runGame = {
     },
     makeArray: function(){
         var myArray = [];
-        for(var i = start; i &lt; end; i++) {
+        for(var i = start; i < end; i++) {
             myArray.push(i);
         }
         return myArray;
@@ -43,8 +43,8 @@ var runGame = {
     mouseUp: function(){
         this.doJump();
         game.time.events.remove(this.timer);
-        
-    }
+
+    },
     doJump: function(){
         this.hero.body.velocity.y = -this.power*12;
     },
