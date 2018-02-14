@@ -6,6 +6,7 @@ var runGame = {
         game.load.atlasJSONHash('hero', 'assets/Candidate Sprite/Main Character.png', 'assets/Candidate Sprite/Main Character.json')
     },
     create: function () {
+        //erase this later
         console.log("Game is running!");
 
         //adding physics
