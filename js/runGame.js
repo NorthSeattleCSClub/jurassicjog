@@ -3,7 +3,7 @@ var runGame = {
         game.load.image('sky', 'assets/sky.png');
         game.load.image('ground', 'assets/platform.png');
         game.load.spritesheet('sprite', 'assets/sprite.png', 32, 48);
-        game.load.image('hero', 'assets/Candidate Sprite/Main Character Clone.png')
+        game.load.image('hero', 'assets/Candidate Sprite/Main Character/Jurassic Jog MC clone.png')
     },
     create: function () {
         //erase this later
