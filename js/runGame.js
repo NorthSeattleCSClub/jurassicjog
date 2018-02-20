@@ -3,7 +3,7 @@ var runGame = {
         game.load.image('sky', 'assets/sky.png');
         game.load.image('ground', 'assets/platform.png');
         game.load.spritesheet('sprite', 'assets/sprite.png', 32, 48);
-        game.load.atlasJSONHash('hero', 'assets/Candidate Sprite/Main Character.png', 'assets/Candidate Sprite/Main Character.json')
+        game.load.image('hero', 'assets/Candidate Sprite/Main Character Clone.png')
     },
     create: function () {
         //erase this later
