@@ -32,7 +32,7 @@ var runGame = {
 
         //set Listeners
         game.input.onUp.add(this.mouseUp, this);
-        game.input.onDown.add(this.mouseDown, this);
+        //game.input.onDown.add(this.mouseDown, this);
 
     
     },
@@ -45,16 +45,15 @@ var runGame = {
     },
 
 
-    mouseDown: function(){
-        this.timer = game.time.events.loop(Phaser.Time.SECOND/1000, this);
-    },
+    //mouseDown: function(){
+    //      this.timer = game.time.events.loop(Phaser.Time.SECOND/1000, this);
+    //},
     mouseUp: function(){
         this.doJump();
-        game.time.events.remove(this.timer);
 
     },
     doJump: function(){
-        this.hero.body.velocity.y = -12;
+        this.hero.body.velocity.y = -250;
     },
 
     update: function(){
