@@ -16,13 +16,22 @@ var runGame = {
         game.add.sprite(0, 0, 'sky');
 
         //add ground
-        var ground = game.add.sprite(0, game.height * .9, 'ground');
+        this.ground = game.add.sprite(0, game.height * .9, 'ground');
 
         //add the hero in
-        this.hero = game.add.sprite(game.width*.2, ground.y-25, 'hero');
+        this.hero = game.add.sprite(game.width*.5, this.ground.y - 15, 'hero');
 
         //enable physics for hero 
         game.physics.enable(this.hero, Phaser.Physics.ARCADE);
+        game.physics.enable(this.ground, Phaser.Physics.ARCADE);
+
+        this.hero.body.gravity.y = 200;
+        this.hero.body.colliderWorldBounds = true;
+        this.ground.immovable = true;
+
+        //set Listeners
+        game.input.onUp.add(this.mouseUp, this);
+        game.input.onDown.add(this.mouseDown, this);
 
     
     },
@@ -34,12 +43,9 @@ var runGame = {
         return myArray;
     },
 
-    update: function () {
-
-    },
 
     mouseDown: function(){
-        this.timer = game.time.events.loop(Phaser.Time.SECOND/1000, this.increasePower, this);
+        this.timer = game.time.events.loop(Phaser.Time.SECOND/1000, this);
     },
     mouseUp: function(){
         this.doJump();
@@ -48,6 +54,10 @@ var runGame = {
     },
     doJump: function(){
         this.hero.body.velocity.y = -this.power*12;
+    },
+
+    update: function(){
+        game.physics.arcade.collide(this.hero, this.ground);
     },
     gameOver: function () {
         game.state.start("gameOver");
