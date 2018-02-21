@@ -3,7 +3,8 @@ var runGame = {
         game.load.image('sky', 'assets/sky.png');
         game.load.image('ground', 'assets/platform.png');
         game.load.spritesheet('sprite', 'assets/sprite.png', 32, 48);
-        game.load.image('hero', 'assets/Main Character/Jurassic Jog MC clone.png')
+        game.load.image('hero', 'assets/Main Character/Jurassic Jog MC clone.png');
+        game.load.image('rock', 'assets/Rock 1/Rock 1.png');
     },
     create: function () {
         //erase this later
@@ -26,12 +27,14 @@ var runGame = {
         game.physics.enable(this.hero, Phaser.Physics.ARCADE);
         game.physics.enable(this.ground, Phaser.Physics.ARCADE);
 
-        this.hero.body.gravity.y = 200;
+        this.hero.body.gravity.y = 700;
         this.hero.body.colliderWorldBounds = true;
         this.ground.body.immovable = true;
 
         //set Listeners
         //game.input.onUp.add(this.mouseUp, this);
+        this.startY = this.hero.y;
+        
         game.input.onDown.add(this.mouseDown, this);
 
     
@@ -49,6 +52,9 @@ var runGame = {
     //      this.timer = game.time.events.loop(Phaser.Time.SECOND/1000, this);
     //},
     mouseDown: function(){
+        //if(this.hero.y != this.startY){
+        //    return;
+        //}
         this.doJump();
 
     },
