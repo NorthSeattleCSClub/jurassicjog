@@ -31,8 +31,8 @@ var runGame = {
         this.ground.body.immovable = true;
 
         //set Listeners
-        game.input.onUp.add(this.mouseUp, this);
-        //game.input.onDown.add(this.mouseDown, this);
+        //game.input.onUp.add(this.mouseUp, this);
+        game.input.onDown.add(this.mouseDown, this);
 
     
     },
@@ -48,7 +48,7 @@ var runGame = {
     //mouseDown: function(){
     //      this.timer = game.time.events.loop(Phaser.Time.SECOND/1000, this);
     //},
-    mouseUp: function(){
+    mouseDown: function(){
         this.doJump();
 
     },
