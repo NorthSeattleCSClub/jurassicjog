@@ -19,7 +19,8 @@ var runGame = {
         this.ground = game.add.sprite(0, game.height * .9, 'ground');
 
         //add the hero in
-        this.hero = game.add.sprite(game.width*.2, this.ground.y - 25, 'hero');
+        //
+        this.hero = game.add.sprite(game.width*.2, this.ground.y - 48, 'hero');
 
         //enable physics for hero 
         game.physics.enable(this.hero, Phaser.Physics.ARCADE);
@@ -27,7 +28,7 @@ var runGame = {
 
         this.hero.body.gravity.y = 200;
         this.hero.body.colliderWorldBounds = true;
-        this.ground.immovable = true;
+        this.ground.body.immovable = true;
 
         //set Listeners
         game.input.onUp.add(this.mouseUp, this);
@@ -53,7 +54,7 @@ var runGame = {
 
     },
     doJump: function(){
-        this.hero.body.velocity.y = -this.power*12;
+        this.hero.body.velocity.y = -12;
     },
 
     update: function(){
