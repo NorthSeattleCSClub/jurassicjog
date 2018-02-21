@@ -19,7 +19,7 @@ var runGame = {
         this.ground = game.add.sprite(0, game.height * .9, 'ground');
 
         //add the hero in
-        this.hero = game.add.sprite(game.width*.5, this.ground.y - 15, 'hero');
+        this.hero = game.add.sprite(game.width*.2, this.ground.y - 25, 'hero');
 
         //enable physics for hero 
         game.physics.enable(this.hero, Phaser.Physics.ARCADE);
