@@ -9,7 +9,7 @@ var menu = {
         game.load.image('settingsBtn', 'assets/jjSettingsBtn.png');
         game.load.image('leaderboardBtn', 'assets/jjLeaderboardBtn.png');
         game.load.image('storeBtn', 'assets/jjStoreBtn.png');
-        game.load.image('hero', 'assets/Candidate Sprite/Main Character/Jurassic Jog MC clone.png')
+        game.load.image('hero', 'assets/Main Character/Jurassic Jog MC clone.png')
     },
     create: function () {
         console.log("Menu is running!");
