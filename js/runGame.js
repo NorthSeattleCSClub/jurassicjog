@@ -1,6 +1,6 @@
 var runGame = {
     preload: function () {
-        game.load.image('sky', 'assets/sky.png');
+        game.load.image('background', 'assets/tempBackground.png');
         game.load.image('ground', 'assets/ground2.png');
         game.load.spritesheet('sprite', 'assets/sprite.png', 32, 48);
         game.load.image('hero', 'assets/Main Character/Jurassic Jog MC clone.png');
@@ -14,7 +14,7 @@ var runGame = {
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
         //background
-        game.add.sprite(0, 0, 'sky');
+        background = game.add.tileSprite(0, 0, 800, 600, 'background');
 
         //add ground
         this.ground = game.add.sprite(0, game.height * .9, 'ground');
@@ -90,6 +90,7 @@ var runGame = {
     },
 
     update: function(){
+        background.tilePosition.x -= 2.5;
         game.physics.arcade.collide(this.hero, this.ground)
         game.physics.arcade.collide(this.hero, this.rocks, this.gameOver, null, this);
         game.physics.arcade.collide(this.ground, this.rocks);
