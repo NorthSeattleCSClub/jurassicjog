@@ -93,6 +93,12 @@ var runGame = {
         game.physics.arcade.collide(this.hero, this.rocks);
         game.physics.arcade.collide(this.ground, this.rocks);
         game.physics.arcade.collide(this.rocks);
+
+        var firstRock = this.rocks.getChildAt(0);
+        //if off screen reset
+        if(firstRock.x < -game.width) {
+            this.makeRocks();
+        }
     },
     gameOver: function () {
         game.state.start("gameOver");
