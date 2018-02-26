@@ -36,8 +36,35 @@ var runGame = {
         
         game.input.onDown.add(this.mouseDown, this);
 
+        this.rocks = game.add.group();
+        this.makeRocks();
+        this.rocks.x = game.width - this.rocks.width;
+        this.rocks.y=this.ground.y-50;
     
     },
+    makeRocks: function() {
+        this.rocks.removeAll();
+        var rock = game.add.sprite(0, 0, "rock");
+        this.rocks.add(rock);
+
+        this.rocks.x = game.width - this.rocks.width;
+        this.rocks.y = this.ground.y - 50;
+
+        //loop through each rock + apply physics
+        this.rocks.forEach(function(rock) {
+            game.physics.enable(rock, Phaser.Physics.ARCADE);
+            rock.body.velocity.x = -150;
+            rock.body.gravity.y = 4;
+            rock.body.bounce.set(1,1);
+        })
+
+        /*var wallHeight=game.rnd.integerInRange(2, 6);
+        for (var i = 0; i < wallHeight; i++) {
+            var rock = game.add.sprite(0, -i * 25, "rock");
+            this.rocks.add(rock);
+        }*/
+    },
+
     makeArray: function(){
         var myArray = [];
         for(var i = start; i < end; i++) {
@@ -62,7 +89,10 @@ var runGame = {
     },
 
     update: function(){
-        game.physics.arcade.collide(this.hero, this.ground);
+        game.physics.arcade.collide(this.hero, this.ground)
+        game.physics.arcade.collide(this.hero, this.rocks);
+        game.physics.arcade.collide(this.ground, this.rocks);
+        game.physics.arcade.collide(this.rocks);
     },
     gameOver: function () {
         game.state.start("gameOver");
