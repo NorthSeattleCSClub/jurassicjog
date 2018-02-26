@@ -27,6 +27,7 @@ var runGame = {
         game.physics.enable(this.ground, Phaser.Physics.ARCADE);
 
         this.hero.body.gravity.y = 700;
+        this.hero.body.bounce.set(0.5,0.5);
         this.hero.body.colliderWorldBounds = true;
         this.ground.body.immovable = true;
 
@@ -90,7 +91,7 @@ var runGame = {
 
     update: function(){
         game.physics.arcade.collide(this.hero, this.ground)
-        game.physics.arcade.collide(this.hero, this.rocks);
+        game.physics.arcade.collide(this.hero, this.rocks, this.gameOver, null, this);
         game.physics.arcade.collide(this.ground, this.rocks);
         game.physics.arcade.collide(this.rocks);
 
