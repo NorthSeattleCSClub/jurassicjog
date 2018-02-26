@@ -90,6 +90,7 @@ var runGame = {
     },
 
     update: function(){
+        game.debug.text('Elapsed seconds: ' + this.game.time.totalElapsedSeconds(), 32, 32);
         background.tilePosition.x -= 2.5;
         game.physics.arcade.collide(this.hero, this.ground)
         game.physics.arcade.collide(this.hero, this.rocks, this.gameOver, null, this);
