@@ -3,8 +3,9 @@ var runGame = {
         game.load.image('background', 'assets/tempBackground.png');
         game.load.image('ground', 'assets/ground2.png');
         game.load.spritesheet('sprite', 'assets/sprite.png', 32, 48);
-        game.load.image('hero', 'assets/Main Character/Jurassic Jog MC clone.png');
+        game.load.image('hero', 'assets/Main Character/Jurassic Jog MC.png');
         game.load.image('rock', 'assets/Rock 1/Rock 1.png');
+        game.load.atlasJSONHash('herojson', 'assets/Main Character/Jurassic Jog MC.png', 'assets/Main Character/Jurassic Jog MC.json' )
     },
     create: function () {
         //erase this later
