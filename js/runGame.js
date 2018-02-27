@@ -14,7 +14,7 @@ var runGame = {
         game.load.spritesheet('sprite', 'assets/sprite.png', 32, 48);
         game.load.image('heropng', 'assets/Main Character/Jurassic Jog MC.png');
         game.load.image('rock', 'assets/Rock 1/Rock 1.png');
-        game.load.atlasJSONHash('hero', 'assets/Main Character/Jurassic Jog MC.png', 'assets/Main Character/Jurassic Jog MC.json' )
+        game.load.atlasJSONHash('hero', 'assets/Main Character/Jurassic Jog MC-1.png', 'assets/Main Character/Jurassic Jog MC.json' )
     },
 
 
@@ -36,7 +36,7 @@ var runGame = {
         this.hero = game.add.sprite(game.width*.2, this.ground.y - 100, 'hero');
 
         //add animation to hero
-        this.hero.animations.add('run', this.makeArray(0,3), 19, true);
+        this.hero.animations.add('run', this.makeArray(0,3), 4, true);
         this.hero.animations.play('run');
         //enable physics for hero 
         game.physics.enable(this.hero, Phaser.Physics.ARCADE);
