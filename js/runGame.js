@@ -1,4 +1,13 @@
 var runGame = {
+
+    makeArray: function(start,end){
+        var myArray = [];
+        for(var i = start; i < end; i++) {
+            myArray.push(i);
+        }
+        return myArray;
+    },
+
     preload: function () {
         game.load.image('background', 'assets/tempBackground.png');
         game.load.image('ground', 'assets/ground2.png');
@@ -7,6 +16,9 @@ var runGame = {
         game.load.image('rock', 'assets/Rock 1/Rock 1.png');
         game.load.atlasJSONHash('hero', 'assets/Main Character/Jurassic Jog MC.png', 'assets/Main Character/Jurassic Jog MC.json' )
     },
+
+
+    
     create: function () {
         //erase this later
         console.log("Game is running!");
@@ -24,8 +36,8 @@ var runGame = {
         this.hero = game.add.sprite(game.width*.2, this.ground.y - 100, 'hero');
 
         //add animation to hero
-        this.hero.animation.add('run', this.makeArray(0,3), 19, true);
-        this.hero.animation.play('run');
+        this.hero.animations.add('run', this.makeArray(0,3), 19, true);
+        this.hero.animations.play('run');
         //enable physics for hero 
         game.physics.enable(this.hero, Phaser.Physics.ARCADE);
         game.physics.enable(this.ground, Phaser.Physics.ARCADE);
@@ -68,14 +80,6 @@ var runGame = {
             var rock = game.add.sprite(0, -i * 25, "rock");
             this.rocks.add(rock);
         }*/
-    },
-
-    makeArray: function(){
-        var myArray = [];
-        for(var i = start; i < end; i++) {
-            myArray.push(i);
-        }
-        return myArray;
     },
 
 
