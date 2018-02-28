@@ -94,7 +94,7 @@ var runGame = {
 
     },
     doJump: function(){
-        this.hero.body.velocity.y = -250;
+        this.hero.body.velocity.y = -400;
     },
 
     update: function(){
