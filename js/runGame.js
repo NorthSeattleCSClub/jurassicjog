@@ -61,8 +61,13 @@ var runGame = {
     },
     makeRocks: function() {
         this.rocks.removeAll();
-        var rock = game.add.sprite(0, 0, "rock");
-        this.rocks.add(rock);
+        
+        for(var i = 0; i < 5; i++) {
+            var rock = game.add.sprite(Math.random()*400, 0, "rock");
+            this.rocks.add(rock);
+        }
+        //var rock = game.add.sprite(0, 0, "rock");
+        //this.rocks.add(rock);
 
         this.rocks.x = game.width - this.rocks.width;
         this.rocks.y = this.ground.y - 50;
