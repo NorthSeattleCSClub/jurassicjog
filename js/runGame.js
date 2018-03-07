@@ -59,8 +59,6 @@ var runGame = {
         this.rocks.y = this.ground.y - 50;
 
         this.score = 0;
-        //setInterval(function(){ this.score++; }, 1000);
-
     },
     makeRocks: function () {
         this.rocks.removeAll();
@@ -82,18 +80,8 @@ var runGame = {
             rock.body.gravity.y = 4;
             rock.body.bounce.set(1, 1);
         })
-
-        /*var wallHeight=game.rnd.integerInRange(2, 6);
-        for (var i = 0; i < wallHeight; i++) {
-            var rock = game.add.sprite(0, -i * 25, "rock");
-            this.rocks.add(rock);
-        }*/
     },
 
-
-    //mouseDown: function(){
-    //      this.timer = game.time.events.loop(Phaser.Time.SECOND/1000, this);
-    //},
     mouseDown: function () {
         //if(this.hero.y != this.startY){
         //    return;
@@ -107,7 +95,6 @@ var runGame = {
 
     update: function () {
         this.score++;
-        //game.debug.text('Elapsed seconds: ' + this.game.time.totalElapsedSeconds(), 32, 32);
         game.debug.text("Score: " + this.score, 32, 32);
         background.tilePosition.x -= 2.5;
         game.physics.arcade.collide(this.hero, this.ground)
@@ -115,17 +102,11 @@ var runGame = {
         game.physics.arcade.collide(this.ground, this.rocks);
         game.physics.arcade.collide(this.rocks);
 
-        var lastRock = this.rocks.getChildAt(this.rocks.length-1);
+        var lastRock = this.rocks.getChildAt(this.rocks.length - 1);
         //if off screen reset
         if (lastRock.x < -game.width) {
             this.makeRocks();
         }
-
-        /*var firstRock = this.rocks.getChildAt(0);
-        //if off screen reset
-        if (firstRock.x < -game.width) {
-            this.makeRocks();
-        }*/
     },
     gameOver: function () {
         game.state.start("gameOver");

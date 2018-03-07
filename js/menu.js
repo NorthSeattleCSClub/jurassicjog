@@ -14,7 +14,8 @@ var menu = {
     create: function () {
         console.log("Menu is running!");
 
-        game.add.sprite(0,0, 'background');
+        //game.add.sprite(0,0, 'background');
+        background = game.add.tileSprite(0, 0, 800, 600, 'background');
         this.playAgain = game.add.sprite(game.width / 2, game.height / 2, "playButton");
         this.playAgain.anchor.set(0.5, 0.5);
         this.playAgain.inputEnabled = true;
@@ -25,6 +26,9 @@ var menu = {
         game.add.sprite(game.width/2.5, game.height/1.4, 'leaderboardBtn');
         game.add.sprite(game.width/1.5, game.height/1.4, 'settingsBtn');
 
+    },
+    update: function() {
+        background.tilePosition.x -= 2.5;
     },
     startGame: function () {
         game.state.start("runGame");
