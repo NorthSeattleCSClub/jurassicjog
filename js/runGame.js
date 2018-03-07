@@ -55,14 +55,17 @@ var runGame = {
 
         this.rocks = game.add.group();
         this.makeRocks();
-        this.rocks.x = this.rocks.width;
+        this.rocks.x = 400 + this.rocks.width;
         this.rocks.y = this.ground.y - 50;
+
+        this.score = 0;
+        //setInterval(function(){ this.score++; }, 1000);
 
     },
     makeRocks: function () {
         this.rocks.removeAll();
 
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 3; i++) {
             var rock = game.add.sprite(Math.random() * 400, 0, "rock");
             this.rocks.add(rock);
         }
@@ -103,7 +106,9 @@ var runGame = {
     },
 
     update: function () {
-        game.debug.text('Elapsed seconds: ' + this.game.time.totalElapsedSeconds(), 32, 32);
+        this.score++;
+        //game.debug.text('Elapsed seconds: ' + this.game.time.totalElapsedSeconds(), 32, 32);
+        game.debug.text("Score: " + this.score, 32, 32);
         background.tilePosition.x -= 2.5;
         game.physics.arcade.collide(this.hero, this.ground)
         game.physics.arcade.collide(this.hero, this.rocks, this.gameOver, null, this);
