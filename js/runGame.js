@@ -7,18 +7,15 @@ var runGame = {
         }
         return myArray;
     },
-
     preload: function () {
         game.load.image('background', 'assets/tempBackground.png');
         game.load.image('ground', 'assets/ground2.png');
         game.load.spritesheet('sprite', 'assets/sprite.png', 32, 48);
         game.load.image('heropng', 'assets/Main Character/Jurassic Jog MC.png');
+        //game.load.image('');
         game.load.image('rock', 'assets/Rock 1/Rock 1.png');
         game.load.atlasJSONHash('hero', 'assets/Main Character/Jurassic Jog MC.png', 'assets/Main Character/Jurassic Jog MC.json');
     },
-
-
-
     create: function () {
         //erase this later
         console.log("Game is running!");
@@ -92,7 +89,6 @@ var runGame = {
     doJump: function () {
         this.hero.body.velocity.y = -400;
     },
-
     update: function () {
         this.score++;
         game.debug.text("Score: " + this.score, 32, 32);
