@@ -11,6 +11,7 @@ var menu = {
         game.load.image('storeBtn', 'assets/jjStoreBtn.png');
         game.load.image('hero', 'assets/Main Character/Jurassic Jog MC clone.png');
         game.load.image('gameOverLogo', 'assets/jjGameOver.png', 32, 32);
+        game.load.image('replayBtn', 'assets/replayBtn.png');
     },
     create: function () {
         console.log("Menu is running!");

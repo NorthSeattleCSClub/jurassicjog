@@ -70,7 +70,8 @@ var runGame = {
         this.makeRocks();
         this.rocks.x = game.width - this.rocks.width;
         this.rocks.y=this.ground.y-50;
-    
+        
+        this.score = 0;
     },
     makeRocks: function() {
         this.rocks.removeAll();
