@@ -40,7 +40,7 @@ var runGame = {
         this.hero = game.add.sprite(game.width*.2, this.ground.y, 'hero');
 
         //add dino
-        this.dino = game.add.sprite(0, this.ground.y, 'dino')
+        this.dino = game.add.sprite(0, this.ground.y - 75, 'dino')
 
         //add power bar
         this.powerBar = game.add.sprite(this.hero.x + 25, this.hero.y + 25, 'bar');
@@ -51,6 +51,10 @@ var runGame = {
         this.hero.width = game.width / 10;
         this.hero.scale.y = this.hero.scale.x;
         this.hero.anchor.set(0.5, 1);
+
+        //add animation to dino
+        this.dino.animations.add('rundino', this.makeArray(0,2), 8, true);
+        this.dino.animations.play('rundino');
         
         //enable physics for hero 
         game.physics.enable(this.hero, Phaser.Physics.ARCADE);
