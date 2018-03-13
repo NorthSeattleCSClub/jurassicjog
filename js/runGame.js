@@ -52,7 +52,7 @@ var runGame = {
         game.physics.enable(this.ground, Phaser.Physics.ARCADE);
 
         this.hero.body.gravity.y = 700;
-        this.hero.body.bounce.set(0.5,0.5);
+        //this.hero.body.bounce.set(0.5,0.5);
         this.hero.body.colliderWorldBounds = true;
         this.ground.body.immovable = true;
 
