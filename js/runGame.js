@@ -40,7 +40,7 @@ var runGame = {
         this.hero = game.add.sprite(game.width*.2, this.ground.y, 'hero');
 
         //add dino
-        this.dino = game.add.sprite(0, this.ground.y - 75, 'dino')
+        this.dino = game.add.sprite(0, this.ground.y - 70, 'dino')
 
         //add power bar
         this.powerBar = game.add.sprite(this.hero.x + 25, this.hero.y + 25, 'bar');
